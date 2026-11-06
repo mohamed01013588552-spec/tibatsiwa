@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طيبات سيوة | منتجات واحة سيوة الطبيعية</title>
+  
+  <!-- الخط العربي Cairo وأيقونات Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+ :root {
+      --sand-bg: #F7F3E9;
+      --card-bg: #EAE1D2;
+      --olive-dark: #3E4A2D;
+      --olive-light: #5A6D42;
+      --date-brown: #7A4B2A;
+      --date-dark: #4A2E1A;
+      --clay-orange: #C06B3E;
+      --text-dark: #2A2520;
+      --text-muted: #6E675F;
+      --border-color: #D8CEBD;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+      background-color: var(--sand-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* الشريط العلوي للآية */
+    .verse-bar {
+      background-color: var(--olive-dark);
+      color: #EAE1D2;
+      text-align: center;
+      padding: 7px 15px;
+      font-size: 0.88rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* الهيدر وقائمة التنقل */
+    header {
+      background-color: rgba(247, 243, 233, 0.95);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* لوجو البراند الاحترافي */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--olive-dark);
+    }
+
+    .brand-logo-img {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--olive-light);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .brand-logo:hover .brand-logo-img {
+      transform: scale(1.05);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--olive-dark);
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--clay-orange);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--clay-orange);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .cart-btn {
+      position: relative;
+      background: none;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--olive-dark);
+      transition: all 0.2s;
+    }
+
+    .cart-btn:hover {
+      background-color: #EAE1D2;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      background-color: var(--clay-orange);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* البانر الرئيسي (Hero) */
+    .hero {
+      position: relative;
+      height: 440px;
+      margin: 20px auto;
+      max-width: 1200px;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('صور/الواحه.jpg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .hero-content {
+      color: #FFFFFF;
+      padding: 0 20px;
+      max-width: 750px;
+    }
+
+    .hero-content h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      margin-bottom: 22px;
+      font-weight: 600;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background-color: #fff;
+      color: var(--olive-dark);
+      padding: 10px 30px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .hero-btn:hover {
+      background-color: var(--olive-dark);
+      color: #fff;
+    }
+
+    /* محتوى المنتجات والفلترة */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      gap: 15px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--olive-dark);
+      border-right: 4px solid var(--clay-orange);
+      padding-right: 12px;
+    }
+
+    .filter-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: none;
+      border: 1px solid var(--border-color);
+      padding: 6px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background-color: var(--olive-dark);
+      color: #fff;
+      border-color: var(--olive-dark);
+    }
+
+    /* شبكة بطاقات المنتجات */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+    }
+
+    .product-img-wrapper {
+      position: relative;
+      background-color: var(--card-bg);
+      padding: 20px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-img-wrapper img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .product-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+
+    .product-stars {
+      color: #E29B12;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .product-price-row {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .product-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--date-brown);
+    }
+
+    .add-to-cart-btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* ألوان الأزرار المتنوعة المستوحاة من الصورة */
+    .btn-olive {
+      background-color: var(--olive-dark);
+      color: #fff;
+    }
+    .btn-olive:hover { background-color: var(--olive-light); }
+
+    .btn-brown {
+      background-color: var(--date-brown);
+      color: #fff;
+    }
+    .btn-brown:hover { background-color: var(--date-dark); }
+
+    .btn-sand {
+      background-color: #D3BA9B;
+      color: #3E2B1E;
+    }
+    .btn-sand:hover { background-color: #C5A885; }
+
+    /* لوحة السلة الجانبية (Cart Drawer) */
+    .cart-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 200;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s;
+    }
+
+    .cart-drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
+      background: #fff;
+      z-index: 201;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-out;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.active {
+      transform: translateX(0);
+    }
+
+    .cart-drawer-header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-drawer-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--olive-dark);
+    }
+
+    .close-cart-btn {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .cart-items-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f0ece3;
+    }
+
+    .cart-item img {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+      border-radius: 8px;
+      background-color: var(--card-bg);
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .cart-item-price {
+      font-size: 0.85rem;
+      color: var(--date-brown);
+      font-weight: 600;
+    }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .qty-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background: #fafafa;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .cart-drawer-footer {
+      padding: 20px;
+      border-top: 1px solid var(--border-color);
+      background-color: #FAF8F5;
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .checkout-btn {
+      width: 100%;
+      background-color: #25D366;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* الفوتر */
+    footer {
+      background-color: #242D1C;
+      color: #D3CABA;
+      padding: 45px 20px 20px;
+      margin-top: 60px;
+     
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+        padding-right: 30px;
+    padding-left: 20px;
+    }
+
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 1.15rem;
+      margin-bottom: 16px;
+
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col ul li a {
+      color: #BDB4A3;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+      
+    }
+
+    .footer-col ul li a:hover {
+      color: #FFFFFF;
+    }
+/* تنسيق الحاوية العائمة */
+.social-contact-bar {
+  position: fixed;
+  bottom: 25px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 9999;
+}
+
+/* التنسيق الأساسي للأيقونة */
+.contact-icon {
+  width: 52px;
+  height:52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.3s ease, 
+              background-color 0.3s ease;
+  position: relative;
+}
+
+/* ألوان المنصات */
+.contact-icon.whatsapp {
+  background-color: #25d366;
+}
+
+.contact-icon.facebook {
+  background-color: #1877f2;
+}
+
+.contact-icon.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+.contact-icon.phone {
+  background-color: #ff5722;
+  /* أنيميشن نبض خفيف للفت الانتباه للاتصال */
+  animation: pulse 2s infinite;
+}
+
+/* تأثير التمرير (Hover Animation) */
+.contact-icon:hover {
+  transform: scale(1.18) rotate(8deg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.contact-icon.phone:hover {
+  animation: none;
+  transform: scale(1.18) rotate(-10deg);
+}
+
+/* حركة نبض الهاتف */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(255, 87, 34, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 87, 34, 0);
+  }
+}
+    .copyright {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      font-size: 0.85rem;
+      color: #9A9180;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-content h2 { font-size: 1.8rem; }
+      .hero { height: 350px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط الآية الكريمة -->
+  <div class="verse-bar">
+    بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ: «يَا أَيُّهَا الَّذِينَ آمَنُوا كُلُوا مِنْ طَيِّبَاتِ مَا رَزَقْنَاكُمْ»
+  </div>
+
+  <!-- ترويسة الموقع الرئيسية -->
+ <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <img src="صور/LOGO.jpeg" alt="شعار طيبات سيوة" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title">طَيِّبَاتِ سِيوَة</span>
+          <span class="brand-subtitle">لتوزيع منتجات سيوة المحلية</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#products">المنتجات</a></li>
+        <li><a href="#">عن سيوة</a></li>
+        <li><a href="#">تواصل معنا</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="cart-btn" id="openCartBtn" title="عرض السلة">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- البانر الرئيسي -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>طبيعة الواحة بين يديك</h2>
+      <p>من قلب واحة سيوة مباشرة إلى باب بيتك.. تمور فاخرة، وزيت زيتون بكر طبيعي 100% معصور على البارد بأعلى معايير النقاء.</p>
+      <a href="#products" class="hero-btn">تسوّق الآن</a>
+    </div>
+  </section>
+
+  <!-- قائمة المنتجات -->
+  <main class="container" id="products">
+    <div class="section-header">
+      <h3 class="section-title">خيرات ومنتجات الواحة</h3>
+      <div class="filter-tags">
+        <button class="filter-btn active" onclick="filterItems('all')">الكل</button>
+        <button class="filter-btn" onclick="filterItems('dates')">التمور</button>
+        <button class="filter-btn" onclick="filterItems('oil')">زيت الزيتون</button>
+        <button class="filter-btn" onclick="filterItems('olives')">الزيتون والمخللات</button>
+        <button class="filter-btn" onclick="filterItems('herbs')">الأعشاب الطبيعية</button>
+      </div>
+    </div>
+
+    <!-- شبكة المنتجات الأربعة المستوحاة من التصميم -->
+    <div class="products-grid" id="productsGrid">
+      <!-- بطاقة: تمر سيوي فاخر -->
+      <div class="product-card" data-cat="dates">
+        <div class="product-img-wrapper">
+          <img src="صور/TAMR.jpeg" alt="تمر سيوي فاخر">
+        </div>
+        <div class="product-body">
+          <h4 class="product-title">تمر سيوي فاخر</h4>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-price-row">
+            <span class="product-price">100 ج.م</span>
+            <small style="color: var(--text-muted);">علبة 1 كجم</small>
+          </div>
+          <button class="add-to-cart-btn btn-sand" onclick="addToCart('تمر سيوي فاخر (1 كجم)', 120, 'https://images.unsplash.com/photo-1596797882870-8c33deeac224?auto=format&fit=crop&w=400&q=80')">
+            <i class="fa-solid fa-cart-plus"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+
+      <!-- بطاقة: زيت زيتون بكر ممتاز -->
+      <div class="product-card" data-cat="oil">
+        <div class="product-img-wrapper">
+          <img src="صور/OIL.jpg" alt="  زيت زيتون بكر ممتاز">
+        </div>
+        <div class="product-body">
+          <h4 class="product-title"> زيت زيتون بكر ممتاز سوبر اكسترا</h4>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-price-row">
+            <span class="product-price">675 ج.م</span>
+            <small style="color: var(--text-muted);">عصرة باردة - 1 لتر</small>
+          </div>
+          <button class="add-to-cart-btn btn-olive" onclick="addToCart('زيت زيتون بكر (1 لتر)', 280, 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80')">
+            <i class="fa-solid fa-cart-plus"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+  <!--  بطاقة: زيت زيتون بكر ممتاز زجاج -->
+      <div class="product-card" data-cat="oil">
+        <div class="product-img-wrapper">
+          <img src="صور/زيت زجاج.jpeg" alt="  زيت زيتون بكر ممتاز">
+        </div>
+        <div class="product-body">
+          <h4 class="product-title"> زيت زيتون بكر ممتاز اكسترا</h4>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-price-row">
+            <span class="product-price">575 ج.م</span>
+            <small style="color: var(--text-muted);">عصرة باردة - 1 لتر</small>
+          </div>
+          <button class="add-to-cart-btn btn-olive" onclick="addToCart('زيت زيتون بكر (1 لتر)', 280, 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=400&q=80')">
+            <i class="fa-solid fa-cart-plus"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+      <!-- بطاقة: زيتون سيوي طبيعي -->
+      <div class="product-card" data-cat="olives">
+        <div class="product-img-wrapper">
+          <img src="صور/كلامتا سيوي مغلف.jpeg" alt="زيتون سيوي طبيعي">
+        </div>
+        <div class="product-body">
+          <h4 class="product-title">زيتون كلامتا سيوي طبيعي</h4>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-price-row">
+            <span class="product-price">130 ج.م</span>
+            <small style="color: var(--text-muted);">برطمان 1 كجم</small>
+          </div>
+          <button class="add-to-cart-btn btn-sand" onclick="addToCart('زيتون سيوي طبيعي (1 كجم)', 95, 'https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&q=80')">
+            <i class="fa-solid fa-cart-plus"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+  <!-- بطاقة: زيتون تفاحي سيوي طبيعي -->
+      <div class="product-card" data-cat="olives">
+        <div class="product-img-wrapper">
+          <img src="صور/تفاحي سيوي مغلف.jpeg" alt="زيتون سيوي طبيعي">
+        </div>
+        <div class="product-body">
+          <h4 class="product-title">زيتون تفاحي سيوي طبيعي</h4>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-price-row">
+            <span class="product-price">120 ج.م</span>
+            <small style="color: var(--text-muted);">برطمان 1 كجم</small>
+          </div>
+          <button class="add-to-cart-btn btn-sand" onclick="addToCart('زيتون سيوي طبيعي (1 كجم)', 120, 'https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&q=80')">
+            <i class="fa-solid fa-cart-plus"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+        <!-- بطاقة: زيتون مفروم سيوي طبيعي -->
+      <div class="product-card" data-cat="olives">
+        <div class="product-img-wrapper">
+          <img src="صور/زيتون مفروم.jpeg" alt="زيتون سيوي طبيعي">
+        </div>
+        <div class="product-body">
+          <h4 class="product-title">زيتون مفروم بالاعشاب سيوي طبيعي</h4>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-price-row">
+            <span class="product-price">100 ج.م</span>
+            <small style="color: var(--text-muted);">برطمان 1\2 كجم</small>
+          </div>
+          <button class="add-to-cart-btn btn-sand" onclick="addToCart('زيتون سيوي طبيعي (1\2 كجم)', 100, 'https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&q=80')">
+            <i class="fa-solid fa-cart-plus"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+        <!-- بطاقة: زيتون شرائح بيتزا سيوي طبيعي -->
+      <div class="product-card" data-cat="olives">
+        <div class="product-img-wrapper">
+          <img src="صور/شرائح.jpeg" alt="زيتون سيوي طبيعي">
+        </div>
+        <div class="product-body">
+          <h4 class="product-title">زيتون شرائح بيتزا سيوي طبيعي</h4>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-price-row">
+            <span class="product-price">120 ج.م</span>
+            <small style="color: var(--text-muted);">برطمان 1 كجم</small>
+          </div>
+          <button class="add-to-cart-btn btn-sand" onclick="addToCart('زيتون سيوي طبيعي (1 كجم)', 120, 'https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&q=80')">
+            <i class="fa-solid fa-cart-plus"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+       <!-- بطاقة: زيتون كلامتا اخضر سيوي طبيعي -->
+      <div class="product-card" data-cat="olives">
+        <div class="product-img-wrapper">
+          <img src="صور/كلامتا اخضر.jpeg" alt="زيتون سيوي طبيعي">
+        </div>
+        <div class="product-body">
+          <h4 class="product-title">زيتون كلامتا اخضر سيوي طبيعي</h4>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-price-row">
+            <span class="product-price">130 ج.م</span>
+            <small style="color: var(--text-muted);">برطمان 1 كجم</small>
+          </div>
+          <button class="add-to-cart-btn btn-sand" onclick="addToCart('زيتون سيوي طبيعي (1 كجم)', 120, 'https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&q=80')">
+            <i class="fa-solid fa-cart-plus"></i> أضف إلى السلة
+          </button>
+        </div>
+      </div>
+      
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- نافذة سلة المشتريات الجانبية -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <span class="cart-drawer-title"><i class="fa-solid fa-basket-shopping"></i> سلة طلباتك</span>
+      <button class="close-cart-btn" id="closeCartBtn">&times;</button>
+    </div>
+
+    <div class="cart-items-list" id="cartItemsContainer">
+      <p style="text-align:center; color:var(--text-muted); margin-top:40px;">السلة فارغة حالياً</p>
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="total-row">
+        <span>الإجمالي:</span>
+        <span id="cartTotalPrice">0 ج.م</span>
+      </div>
+      <button class="checkout-btn" onclick="sendOrderViaWhatsApp()">
+        <i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i> تأكيد الطلب عبر واتساب
+      </button>
+    </div>
+  </aside>
+
+  <!-- تذييل الصفحة -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>طيبات سيوة</h4>
+        <p style="font-size:0.9rem; line-height:1.7;">نوصل إليكم خيرات واحة سيوة من التمور والزيوت والأعشاب الطبيعية بجودة أصلية ومضمونة 100%.</p>
+      </div>
+      <div class="footer-col">
+        <h4>أقسام سريعة</h4>
+        <ul>
+          <li><a href="#">التمور الفاخرة</a></li>
+          <li><a href="#">زيت الزيتون البكر</a></li>
+          <li><a href="#">مخللات وزيتون سيوة</a></li>
+          <li><a href="#">منتجات العطارة والملح</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>خدمة العملاء</h4>
+        <ul>
+          <li><a href="#">سياسة الشحن والتوصيل</a></li>
+          <li><a href="#">ضمان الجودة والاسترجاع</a></li>
+          <li><a href="#">الطلبات الخاصة والكميات بالجملة</a></li>
+        </ul>
+      </div>
+    </div>
+
+  <!-- حاوية أزرار التواصل -->
+  <div class="social-contact-bar">
+    <!-- واتساب -->
+    <a href="https://wa.me/201505808824" target="_blank" class="contact-icon whatsapp" title="تواصل عبر واتساب">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- فيسبوك -->
+    <a href="https://www.facebook.com/share/1ABEFNRhBx/" target="_blank" class="contact-icon facebook" title="صفحتنا على فيسبوك">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <!-- إنستجرام -->
+    <a href="https://www.instagram.com/tibatsiwa.2026?xtok=ajF1NGttcHdtNDJy" target="_blank" class="contact-icon instagram" title="تابعنا على إنستجرام">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- اتصال هاتفي مباشر -->
+    <a href="tel:+201092601746" class="contact-icon phone" title="اتصل بنا">
+      <i class="fas fa-phone"></i>
+    </a>
+  </div>
+    <div class="copyright">
+      جميع الحقوق محفوظة &copy; 2026 متجر طيبات سيوة
+    </div>
+  </footer>
+
+  <!-- سكربت العمليات التفاعلية -->
+  <script>
+    let cart = [];
+
+    // أزرار السلة
+    const cartBtn = document.getElementById('openCartBtn');
+    const closeBtn = document.getElementById('closeCartBtn');
+    const overlay = document.getElementById('cartOverlay');
+    const drawer = document.getElementById('cartDrawer');
+
+    function toggleCart(open = true) {
+      if (open) {
+        drawer.classList.add('active');
+        overlay.classList.add('active');
+      } else {
+        drawer.classList
